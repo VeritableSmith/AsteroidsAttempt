@@ -191,8 +191,8 @@ function handleShipAnimation(context) {
     if(rotationDifference>120) {
       SPACE_SHIP.rotationM+=rotationMDirection*rotationDifference/10;
     }
-    else if(rotationDifference>90) {
-      SPACE_SHIP.rotationM+=rotationMDirection*rotationDifference/15;
+    else if(rotationDifference>80) {
+      SPACE_SHIP.rotationM+=rotationMDirection*rotationDifference/30;
     }
     else if(rotationDifference>60) {
       SPACE_SHIP.rotationM+=rotationMDirection*rotationDifference/75;
@@ -209,7 +209,7 @@ function handleShipAnimation(context) {
 
   //Activate thruster/Accelerate the ship
   if(CONTROLS.ship.forward) {
-    if(SPACE_SHIP.speed<3.8) {SPACE_SHIP.speed+=0.035;}
+    if(SPACE_SHIP.speed<3.8) {SPACE_SHIP.speed+=0.05;}
   }
   else {
     if(SPACE_SHIP.speed>1.8) {SPACE_SHIP.speed-=0.03;}
@@ -404,7 +404,7 @@ function handleAsteroidsAnimation() {
   }
 
 }
-  if(lastAsteroidTime > 0 && ASTEROIDS.asteroids.length < 11) {lastAsteroidTime-=1;}
+  if(lastAsteroidTime > 0 && ASTEROIDS.asteroids.length < 8) {lastAsteroidTime-=1;}
   else if (ASTEROIDS.asteroids.length < 8) {
       var ay, ax;
       if(Math.random() > 0.5) {
